@@ -56,5 +56,8 @@ oc create configmap wordpress-config \
   -n multiplayer-app
 ```
 # Deploy statefulset
+```sh
+oc apply -f 01-mysql-statefulset.yaml
+```
 
 [Statefulset](./01-mysql-statefulset.yaml)
