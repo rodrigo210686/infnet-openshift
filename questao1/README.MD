@@ -69,4 +69,15 @@ oc apply -f 02-wordpress.yaml
 
 [Wordpress-deploy](./02-wordpress.yaml)
 
+# Route Expose Wordpress
 
+```bash
+# Criar route para expor o WordPress
+oc expose service wordpress \
+  --name=wordpress-route \
+  --hostname=wordpress-multiplayer-app.apps.ocp4.example.com \
+  -n multiplayer-app
+
+# Ou deixar o OpenShift gerar o hostname automaticamente:
+oc expose service wordpress -n multiplayer-app
+```
